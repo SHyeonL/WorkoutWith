@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\activity_major_screen.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\activity_major_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_upload_new_post.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_upload_new_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_matching_start.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_matching_start.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "com.opensw.mainscreen.app-mergeDebugResources-44:/layout/fragment_upload_new_post.xml",
+        "source": "com.opensw.mainscreen.app-main-47:/layout/fragment_upload_new_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_my_profile.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_my_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_find_password.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_find_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_find_id.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_find_id.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_matching_success.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_matching_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_ranking.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_ranking.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_community.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_community.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\recycler_community.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\recycler_community.xml"
+    },
+    {
+        "merged": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-mergeDebugResources-44:\\layout\\recycler_home.xml",
+        "source": "C:\\Users\\kjgho\\.gradle\\daemon\\7.3.3\\com.opensw.mainscreen.app-main-47:\\layout\\recycler_home.xml"
+    }
+]
