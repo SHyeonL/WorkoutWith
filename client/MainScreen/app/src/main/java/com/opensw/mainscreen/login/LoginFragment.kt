@@ -20,10 +20,12 @@ class LoginFragment : Fragment() {
     ): View? {
         val intent = Intent(activity, MajorScreen::class.java)
         val binding = FragmentLoginBinding.inflate(inflater, container, false)
-        binding.btnRegister.setOnClickListener { mainActivity?.goRegisterFragment() }
-        binding.btnFindId.setOnClickListener { mainActivity?.goFindIdFragment() }
-        binding.btnFindPassword.setOnClickListener { mainActivity?.goFindPasswordFragment() }
-        binding.btnLogin.setOnClickListener { mainActivity?.startActivity(intent) }
+        with(binding) {
+            btnRegister.setOnClickListener { mainActivity?.goRegisterFragment() }
+            btnFindId.setOnClickListener { mainActivity?.goFindIdFragment() }
+            btnFindPassword.setOnClickListener { mainActivity?.goFindPasswordFragment() }
+            btnLogin.setOnClickListener { mainActivity?.startActivity(intent) }
+        }
         return binding.root
     }
 

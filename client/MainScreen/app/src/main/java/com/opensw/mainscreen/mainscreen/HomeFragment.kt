@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.opensw.mainscreen.OnItemClick
 import com.opensw.mainscreen.R
 import com.opensw.mainscreen.databinding.FragmentHomeBinding
 
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
         mBinding = binding
         val data:MutableList<Memo> = loadData()
-        var adapter = CustomAdapter()
+        var adapter = HomeAdapter()
         adapter.listData = data
         binding.RecyclerHome.adapter = adapter
         binding.RecyclerHome.layoutManager = LinearLayoutManager(majorScreen)

@@ -31,17 +31,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textCommunityTitle" />
 
     <TextView
-        android:id="@+id/textCommunityEditor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:text="작성자"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCommunityContent" />
-
-    <TextView
         android:id="@+id/textCommunityTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,7 +38,7 @@
         android:layout_marginTop="5dp"
         android:text="시간"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/textCommunityEditor"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCommunityContent" />
 
     <ImageView

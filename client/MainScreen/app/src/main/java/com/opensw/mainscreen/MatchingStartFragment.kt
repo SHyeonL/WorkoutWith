@@ -1,11 +1,13 @@
 package com.opensw.mainscreen
 
+import android.R
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.opensw.mainscreen.databinding.FragmentMatchingStartBinding
 import com.opensw.mainscreen.mainscreen.MajorScreen
 
@@ -19,10 +21,24 @@ class MatchingStartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMatchingStartBinding.inflate(inflater, container, false)
+        var selectRegion = listOf("- 선택하세요 -", "서울", "대전", "대구", "부산")
+        var regionAdapter = ArrayAdapter<String>(majorScreen, R.layout.simple_list_item_1, selectRegion)
+
+        binding.spinnerRegion.adapter = regionAdapter
+
+        var selectSports = listOf("- 선택하세요 -", "축구", "야구", "수영", "싸이클링")
+        var sportsAdapter = ArrayAdapter<String>(majorScreen, R.layout.simple_list_item_1, selectSports)
+
+        binding.spinnerSports.adapter = sportsAdapter
+
         binding.btnBackToHome.setOnClickListener {
             majorScreen?.showNavBar()
             majorScreen?.goBack()
         }
+        binding.btnMatchingStart.setOnClickListener {
+            majorScreen?.goMatchingTeamFragment()
+        }
+
         return binding.root
     }
 
@@ -31,13 +47,4 @@ class MatchingStartFragment : Fragment() {
         majorScreen = context as MajorScreen
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        var data = listOf("- 선택하세요 -", "서울", "대전", "대구", "부산")
-        //var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
-        //binding.spinner.adapter = adapter
-
-
-    }
 }
