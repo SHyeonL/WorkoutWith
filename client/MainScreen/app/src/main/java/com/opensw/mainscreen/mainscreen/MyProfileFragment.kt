@@ -6,14 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavDirections
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.opensw.mainscreen.MyCustomDialog
-import com.opensw.mainscreen.R
 import com.opensw.mainscreen.databinding.FragmentMyProfileBinding
-import com.opensw.mainscreen.databinding.RecyclerMypostBinding
 
 open class MyProfileFragment : Fragment() {
 
@@ -35,10 +31,6 @@ open class MyProfileFragment : Fragment() {
             RecyclerMyPost.adapter = adapter
             RecyclerMyPost.layoutManager = LinearLayoutManager(majorScreen)
         }
-        binding.profileImage.setOnClickListener {
-            val dialog = MyCustomDialog(majorScreen)
-            dialog.showDia()
-        }
         binding.btnEditProfile.setOnClickListener {
             //majorScreen?.goEditProfileFragment()
             val direction = MyProfileFragmentDirections.actionMyProfileFragmentToEditProfileFragment2()
@@ -47,6 +39,21 @@ open class MyProfileFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setFragmentResultListener("request") { key, bundle ->
+            bundle.getString("editId")?.let {
+                binding.textProfileId.text = it
+            }
+        }
+
+        val bundleId = Bundle()
+        bundleId.putString("profileId", binding.textProfileId.text.toString())
+        val bundleContent = Bundle()
+        bundleContent.putString("profileContent", binding.textProfileContent.text.toString())
+
+    }
     override fun onAttach(context: Context) {
         super.onAttach(context)
         majorScreen = context as MajorScreen

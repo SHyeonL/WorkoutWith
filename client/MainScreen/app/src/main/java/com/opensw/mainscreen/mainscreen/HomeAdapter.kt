@@ -1,12 +1,8 @@
 package com.opensw.mainscreen.mainscreen
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.opensw.mainscreen.OnItemClick
-import com.opensw.mainscreen.databinding.FragmentHomeBinding
 import com.opensw.mainscreen.databinding.RecyclerHomeBinding
 import java.text.SimpleDateFormat
 

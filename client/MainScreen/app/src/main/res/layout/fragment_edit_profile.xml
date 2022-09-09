@@ -10,7 +10,7 @@
     tools:context="com.opensw.mainscreen.EditProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ImageMyprofile"
+        android:id="@+id/editProfileImage"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginStart="40dp"
@@ -27,10 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:hint="ID 입력"
-        android:text="kj_ghost07(ID)"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ImageMyprofile"
+        app:layout_constraintStart_toEndOf="@+id/editProfileImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -41,9 +40,8 @@
         android:background="#FFFFFF"
         android:clickable="true"
         android:hint="자기소개 입력"
-        android:text="나를 소개해 보세요."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ImageMyprofile"
+        app:layout_constraintStart_toEndOf="@+id/editProfileImage"
         app:layout_constraintTop_toBottomOf="@+id/EditProfileId" />
 
     <View
@@ -55,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageMyprofile" />
+        app:layout_constraintTop_toBottomOf="@+id/editProfileImage" />
 
     <Button
         android:id="@+id/btnEditComplete"

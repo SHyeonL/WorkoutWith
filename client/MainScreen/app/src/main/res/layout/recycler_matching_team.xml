@@ -4,14 +4,15 @@
     android:layout_height="wrap_content"
     android:id="@+id/layoutListItem"
     android:orientation="vertical"
-    android:layout_marginHorizontal="20dp"
-    android:layout_gravity="center">
+    android:layout_marginHorizontal="10dp"
+    android:layout_gravity="center"
+    >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
-        android:background="@drawable/ic_launcher_background"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/myprofile" />
+
 
     <TextView
         android:id="@+id/textListTitle"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Title 1"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="10sp"
         android:gravity="center"/>
 
 </LinearLayout>

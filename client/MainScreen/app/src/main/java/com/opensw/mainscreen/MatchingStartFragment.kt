@@ -33,7 +33,6 @@ class MatchingStartFragment : Fragment() {
         binding.spinnerSports.adapter = sportsAdapter
 
         binding.btnBackToHome.setOnClickListener {
-            majorScreen?.showNavBar()
             val direction = MatchingStartFragmentDirections.actionMatchingStartFragmentToHomeFragment()
             findNavController().navigate(direction)
         }

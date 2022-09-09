@@ -1,13 +1,23 @@
 package com.opensw.mainscreen.mainscreen
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.opensw.mainscreen.databinding.RecyclerCommunityBinding
 import java.text.SimpleDateFormat
 
-class CommunityAdapter : RecyclerView.Adapter<CommunityHolder>() {
+class CommunityAdapter : RecyclerView.Adapter<CommunityAdapter.CommunityHolder>() {
+
+	interface OnItemClickListner {
+		fun onItemClick(view: View, position: Int)
+	}
+
+	private lateinit var itemClickListner: OnItemClickListner
+
+	fun setOnItemClickListner(onItemClickListner: OnItemClickListner) {
+		itemClickListner = onItemClickListner
+	}
 
 	var listCommunityData = mutableListOf<Community>()
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommunityHolder {
@@ -23,25 +33,25 @@ class CommunityAdapter : RecyclerView.Adapter<CommunityHolder>() {
 	override fun getItemCount(): Int {
 		return listCommunityData.size
 	}
-}
 
-class CommunityHolder(val binding: RecyclerCommunityBinding) : RecyclerView.ViewHolder(binding.root) {
-
-	init {
-		binding.root.setOnClickListener {
-			Toast.makeText(binding.root.context
-				,"클릭된 아이템=${binding.textCommunityTitle.text}"
-				,Toast.LENGTH_LONG).show()
+	inner class CommunityHolder(val binding: RecyclerCommunityBinding) : RecyclerView.ViewHolder(binding.root) {
+		init {
+			binding.root.setOnClickListener {
+				val pos = adapterPosition
+				if(pos != RecyclerView.NO_POSITION && itemClickListner != null) {
+					itemClickListner.onItemClick(binding.root, pos)
+				}
+			}
 		}
-	}
 
-	fun setCommunity(community: Community) {
-		binding.textCommunityTitle.text = community.title
-		binding.textCommunityContent.text = community.content
-		binding.textCommunityEditor.text = community.editor
+		fun setCommunity(community: Community) {
+			binding.textCommunityTitle.text = community.title
+			binding.textCommunityContent.text = community.content
+			binding.textCommunityEditor.text = community.editor
 
-		var sdf = SimpleDateFormat("yyyy/MM/dd")
-		var formattedData = sdf.format(community.editTime)
-		binding.textCommunityTime.text = formattedData
+			var sdf = SimpleDateFormat("yyyy/MM/dd")
+			var formattedData = sdf.format(community.editTime)
+			binding.textCommunityTime.text = formattedData
+		}
 	}
 }

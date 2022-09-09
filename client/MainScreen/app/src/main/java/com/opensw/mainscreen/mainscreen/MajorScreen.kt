@@ -35,39 +35,6 @@ class MajorScreen : AppCompatActivity() {
 		if(state) mBinding.majorScreenNav.visibility = View.GONE else mBinding.majorScreenNav.visibility = View.VISIBLE
 	}
 
-	fun showNavBar() {
-		mBinding.majorScreenNav.isVisible = true
-	}
-
-	fun goMatchingFragment() {
-		val matchingStartFragment = MatchingStartFragment()
-		val transaction = supportFragmentManager.beginTransaction()
-		transaction.add(R.id.LinearLay, matchingStartFragment)
-		transaction.addToBackStack("")
-		transaction.commit()
-	}
-
-	fun goMatchingTeamFragment() {
-		val matchingTeamFragment = MatchingTeamFragment()
-		val transaction = supportFragmentManager.beginTransaction()
-		transaction.add(R.id.TestLayout, matchingTeamFragment)
-		transaction.addToBackStack("")
-		transaction.commit()
-	}
-
-	fun goEditProfileFragment() {
-		Log.d("프래그먼트 실행", "프래그먼트")
-		val editProfileFragment = EditProfileFragment()
-		val transaction = supportFragmentManager.beginTransaction()
-		transaction.add(R.id.LinearLay, editProfileFragment)
-		transaction.addToBackStack("")
-		transaction.commit()
-	}
-
-	fun test() {
-		val editProfileFragment = EditProfileFragment()
-		supportFragmentManager.popBackStack()
-	}
 	fun goBack() {
 		onBackPressed()
 	}

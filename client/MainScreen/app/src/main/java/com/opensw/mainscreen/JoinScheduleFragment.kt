@@ -1,6 +1,9 @@
 package com.opensw.mainscreen
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
+import android.graphics.Paint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,34 +11,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.opensw.mainscreen.databinding.FragmentMatchingStartBinding
+import com.opensw.mainscreen.databinding.FragmentJoinScheduleBinding
 import com.opensw.mainscreen.databinding.FragmentMatchingTeamBinding
 import com.opensw.mainscreen.mainscreen.MajorScreen
 
-class MatchingTeamFragment : Fragment() {
+
+class JoinScheduleFragment : Fragment() {
 
     lateinit var majorScreen: MajorScreen
-    lateinit var binding : FragmentMatchingTeamBinding
-
+    lateinit var binding : FragmentJoinScheduleBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMatchingTeamBinding.inflate(inflater, container, false)
-        val data : MutableList<MatchingTeam> = loadMatchingTeamData()
+        binding = FragmentJoinScheduleBinding.inflate(inflater, container, false)
+        val data : MutableList<MatchingTeam> = loadJoinedTeamData()
         var adapter = MatchingTeamAdapter()
         adapter.listMatchingTeamData = data
+        val builder = AlertDialog.Builder(majorScreen)
+        builder.setMessage("참가 신청이 완료되었습니다!")
         with(binding) {
-            recyclerProfile.adapter = adapter
-            recyclerProfile.layoutManager = GridLayoutManager(majorScreen, 5)
+            recyclerJoinedProfile.adapter = adapter
+            recyclerJoinedProfile.layoutManager = GridLayoutManager(majorScreen, 5)
 
-            btnCreateSchedule.setOnClickListener {
-                val direction = MatchingTeamFragmentDirections.actionMatchingTeamFragmentToCreateScheduleFragment()
-                findNavController().navigate(direction)
-            }
-            btnJoinSchedule.setOnClickListener {
-                val direction = MatchingTeamFragmentDirections.actionMatchingTeamFragmentToJoinScheduleFragment()
-                findNavController().navigate(direction)
+            btnSubmitJoinSchedule.setOnClickListener {
+                val direction = JoinScheduleFragmentDirections.actionJoinScheduleFragmentToMatchingTeamFragment()
+                builder.setPositiveButton("확인", DialogInterface.OnClickListener{dialogInterface, i -> findNavController().navigate(direction) })
+                builder.show()
             }
         }
         return binding?.root
@@ -46,7 +48,7 @@ class MatchingTeamFragment : Fragment() {
         majorScreen = context as MajorScreen
     }
 
-    fun loadMatchingTeamData() : MutableList<MatchingTeam> {
+    fun loadJoinedTeamData() : MutableList<MatchingTeam> {
 
         val data : MutableList<MatchingTeam> = mutableListOf()
         for(no in 1..30) {
@@ -56,4 +58,5 @@ class MatchingTeamFragment : Fragment() {
         }
         return data
     }
+
 }

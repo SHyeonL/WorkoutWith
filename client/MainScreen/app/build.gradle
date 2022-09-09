@@ -3,11 +3,14 @@ import org.gradle.util.internal.SimpleMapInterner
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-
+    androidExtensions {
+        experimental true
+    }
     compileSdk 32
 
     defaultConfig {
