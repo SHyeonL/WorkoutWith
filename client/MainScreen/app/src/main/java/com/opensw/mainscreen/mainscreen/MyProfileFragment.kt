@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.opensw.mainscreen.MyCustomDialog
@@ -38,8 +40,9 @@ open class MyProfileFragment : Fragment() {
             dialog.showDia()
         }
         binding.btnEditProfile.setOnClickListener {
-            majorScreen?.goEditProfileFragment()
-            majorScreen?.hideNavBar()
+            //majorScreen?.goEditProfileFragment()
+            val direction = MyProfileFragmentDirections.actionMyProfileFragmentToEditProfileFragment2()
+            findNavController().navigate(direction)
         }
         return binding.root
     }

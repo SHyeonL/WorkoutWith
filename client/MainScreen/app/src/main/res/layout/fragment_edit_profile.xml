@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainscreen.MajorScreen">
+    android:background="#FFEB3B"
+    android:clickable="true"
+    tools:context="com.opensw.mainscreen.EditProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ImageMyprofile"
@@ -24,8 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="kj_ghost07(ID)"
         android:hint="ID 입력"
+        android:text="kj_ghost07(ID)"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ImageMyprofile"
@@ -36,8 +38,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="나를 소개해 보세요."
+        android:background="#FFFFFF"
+        android:clickable="true"
         android:hint="자기소개 입력"
+        android:text="나를 소개해 보세요."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ImageMyprofile"
         app:layout_constraintTop_toBottomOf="@+id/EditProfileId" />
@@ -58,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:clickable="true"
         android:text="수정 완료"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

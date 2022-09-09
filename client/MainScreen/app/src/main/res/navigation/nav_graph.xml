@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.opensw.mainscreen.mainscreen.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_matchingStartFragment"
+            app:destination="@id/matchingStartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.opensw.mainscreen.mainscreen.CommunityFragment"
@@ -19,10 +23,46 @@
         android:id="@+id/myProfileFragment"
         android:name="com.opensw.mainscreen.mainscreen.MyProfileFragment"
         android:label="fragment_my_profile"
-        tools:layout="@layout/fragment_my_profile" />
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_editProfileFragment2"
+            app:destination="@id/editProfileFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/rankingFragment"
         android:name="com.opensw.mainscreen.mainscreen.RankingFragment"
         android:label="fragment_ranking"
         tools:layout="@layout/fragment_ranking" />
+    <fragment
+        android:id="@+id/editProfileFragment2"
+        android:name="com.opensw.mainscreen.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment2_to_myProfileFragment"
+            app:destination="@id/myProfileFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@layout/fragment_my_profile"/>
+    </fragment>
+    <fragment
+        android:id="@+id/matchingStartFragment"
+        android:name="com.opensw.mainscreen.MatchingStartFragment"
+        android:label="fragment_matching_start"
+        tools:layout="@layout/fragment_matching_start" >
+        <action
+            android:id="@+id/action_matchingStartFragment_to_matchingTeamFragment"
+            app:destination="@id/matchingTeamFragment" />
+        <action
+            android:id="@+id/action_matchingStartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchingTeamFragment"
+        android:name="com.opensw.mainscreen.MatchingTeamFragment"
+        android:label="fragment_matching_team"
+        tools:layout="@layout/fragment_matching_team" >
+        <action
+            android:id="@+id/action_matchingTeamFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

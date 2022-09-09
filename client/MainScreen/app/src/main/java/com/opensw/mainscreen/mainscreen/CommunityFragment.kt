@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.opensw.mainscreen.R
 import com.opensw.mainscreen.databinding.FragmentCommunityBinding
 
-class CommunityFragment : Fragment() {
+class  CommunityFragment : Fragment() {
 
     lateinit var majorScreen: MajorScreen
     lateinit var binding : FragmentCommunityBinding

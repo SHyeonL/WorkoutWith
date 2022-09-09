@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import com.opensw.mainscreen.databinding.FragmentMatchingStartBinding
 import com.opensw.mainscreen.mainscreen.MajorScreen
 
@@ -33,10 +34,12 @@ class MatchingStartFragment : Fragment() {
 
         binding.btnBackToHome.setOnClickListener {
             majorScreen?.showNavBar()
-            majorScreen?.goBack()
+            val direction = MatchingStartFragmentDirections.actionMatchingStartFragmentToHomeFragment()
+            findNavController().navigate(direction)
         }
         binding.btnMatchingStart.setOnClickListener {
-            majorScreen?.goMatchingTeamFragment()
+            val direction = MatchingStartFragmentDirections.actionMatchingStartFragmentToMatchingTeamFragment()
+            findNavController().navigate(direction)
         }
 
         return binding.root

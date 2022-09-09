@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.opensw.mainscreen.OnItemClick
 import com.opensw.mainscreen.R
@@ -28,8 +29,8 @@ class HomeFragment : Fragment() {
         binding.RecyclerHome.adapter = adapter
         binding.RecyclerHome.layoutManager = LinearLayoutManager(majorScreen)
         binding.btnGoMatching.setOnClickListener {
-            majorScreen?.goMatchingFragment()
-            majorScreen?.hideNavBar()
+            val direction = HomeFragmentDirections.actionHomeFragmentToMatchingStartFragment()
+            findNavController().navigate(direction)
         }
         return mBinding?.root
     }

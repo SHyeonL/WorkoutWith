@@ -2,6 +2,8 @@ package com.opensw.mainscreen.mainscreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -29,8 +31,8 @@ class MajorScreen : AppCompatActivity() {
 		NavigationUI.setupWithNavController(mBinding.majorScreenNav, navController)
 	}
 
-	fun hideNavBar() {
-		mBinding.majorScreenNav.isVisible = false
+	fun hideNavBar(state : Boolean) {
+		if(state) mBinding.majorScreenNav.visibility = View.GONE else mBinding.majorScreenNav.visibility = View.VISIBLE
 	}
 
 	fun showNavBar() {
@@ -54,6 +56,7 @@ class MajorScreen : AppCompatActivity() {
 	}
 
 	fun goEditProfileFragment() {
+		Log.d("프래그먼트 실행", "프래그먼트")
 		val editProfileFragment = EditProfileFragment()
 		val transaction = supportFragmentManager.beginTransaction()
 		transaction.add(R.id.LinearLay, editProfileFragment)
@@ -61,8 +64,11 @@ class MajorScreen : AppCompatActivity() {
 		transaction.commit()
 	}
 
+	fun test() {
+		val editProfileFragment = EditProfileFragment()
+		supportFragmentManager.popBackStack()
+	}
 	fun goBack() {
 		onBackPressed()
-		showNavBar()
 	}
 }
